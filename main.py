@@ -24,6 +24,9 @@ def parse_input():
             print(f"Unknown operation: {op}")
             sys.exit(1)
         poly = operations[op](poly)
+    
+    if len(sys.argv) > 2 and sys.argv[2] == "-f":
+        print(f"Resolution {len(ops) // 2} face Count: {len(poly.faces)}")
 
     return poly
 

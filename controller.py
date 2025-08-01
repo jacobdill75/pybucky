@@ -25,10 +25,10 @@ class Controller:
             self.last_mouse = (xpos, ypos)
             return
 
-        dx = xpos - self.last_mouse[0]
-        dy = ypos - self.last_mouse[1]
+        dx = self.last_mouse[0] - xpos
+        dy = self.last_mouse[1] - ypos
         self.rotate[0] += dx * 0.005
-        self.rotate[1] += dy * 0.005
+        self.rotate[1] -= dy * 0.005
         self.last_mouse = (xpos, ypos)
 
     def on_scroll(self, window, xoffset, yoffset):
